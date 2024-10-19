@@ -1,0 +1,22 @@
+{
+  "name": "automate-accmate",
+  "version": "1.0.0",
+  "description": "automated tests for accmate accounting system.",
+  "main": "index.js",
+  "scripts": {
+    "execute-auto-tests": "npx cypress run --headed",
+    "combine-reports": "npx mochawesome-merge cypress/results/**.json -o cypress/results/results.json",
+    "convert-to-html": "npx marge cypress/results/results.json",
+    "execute-tests-and-compile-reports": "npm run execute-auto-tests && npm run combine-reports && npm run convert-to-html"
+  },
+  "author": "phumlani.ranunu",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.15.0",
+    "cypress-xpath": "^2.0.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0",
+    "typescript": "^5.6.2"
+  }
+}
